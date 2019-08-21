@@ -41,6 +41,16 @@ public:
     }
 
     template <class Feature>
+    T evaluate(const Feature& feature, float zoom, T defaultValue) const {
+        return this->match(
+            [&] (const T& constant_) { return constant_; },
+            [&] (const style::PropertyExpression<T>& expression) {
+                return expression.evaluate(zoom, feature, defaultValue);
+            }
+        );
+    }
+
+    template <class Feature>
     T evaluate(const Feature& feature, float zoom, const PropertyMap& featureState, T defaultValue) const {
         return this->match(
             [&] (const T& constant_) { return constant_; },
