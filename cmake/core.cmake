@@ -35,6 +35,8 @@ target_link_libraries(mbgl-core PUBLIC
     vector-tile
 )
 
+set_source_files_properties(vendor/mapbox-base/mapbox/io/include/mapbox/io.hpp PROPERTIES COMPILE_FLAGS -Wno-error=missing-braces)
+
 mbgl_platform_core()
 
 create_source_groups(mbgl-core)
