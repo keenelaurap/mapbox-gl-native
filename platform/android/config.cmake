@@ -62,6 +62,7 @@ macro(mbgl_filesource)
     target_link_libraries(mbgl-filesource
         PUBLIC sqlite
         PUBLIC Mapbox::Base::jni.hpp
+        PUBLIC Mapbox::Base::io
         PUBLIC -llog
         PUBLIC -landroid
         PUBLIC -latomic
