@@ -285,7 +285,7 @@ target_link_libraries(mbgl-benchmark-runner PRIVATE
 
 # Android has no concept of MinSizeRel on android.toolchain.cmake and
 # provides configurations tuned for binary size. We can push it a bit
-# more with code folding and LTO, but not for arm64-v8a.
+# more with code folding and LTO.
 set_target_properties(example-custom-layer PROPERTIES LINK_FLAGS_RELEASE "-fuse-ld=gold -O2 -flto -Wl,--icf=safe")
 set_target_properties(mapbox-gl PROPERTIES LINK_FLAGS_RELEASE "-fuse-ld=gold -O2 -flto -Wl,--icf=safe")
 set_target_properties(mbgl-benchmark-runner PROPERTIES LINK_FLAGS_RELEASE "-fuse-ld=gold -O2 -flto -Wl,--icf=safe")
